@@ -1,14 +1,12 @@
 import { MetadataRoute } from "next";
- 
-const robots: MetadataRoute.Robots = () => {
+
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/private/", // Disallow private routes
+      disallow: "/private/",
     },
     sitemap: "https://example.com/sitemap.xml",
   };
-};
- 
-export default robots;
+}

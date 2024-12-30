@@ -3,7 +3,7 @@
 Create Unzet App makes building your website or app a breeze. With React, Next.js, ShadCN, and TailwindCSS baked in, it’s all about shipping faster.
 
 ```
-CUA v1.0.0
+CUA v1.0.1
 ```
 
 ## Quick Start
