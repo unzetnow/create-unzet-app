@@ -3,6 +3,7 @@ import { Link as LucideLink } from "lucide-react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/home/theme-toggle";
 
 import {
   Accordion,
@@ -96,6 +97,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex gap-3">
+            <ThemeToggle />
             <Button>Button</Button>
           </div>
         </nav>
@@ -104,55 +106,58 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <span className="text-xl font-bold">Unzet App</span>
             </div>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="size-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="w-full overflow-y-auto" side="left">
-                <SheetHeader className="hidden">
-                  <SheetTitle>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl font-bold">Unzet App</span>
-                    </div>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col gap-4 mt-8 mb-8">
-                  <Link href="#" className="font-semibold">
-                    Link
-                  </Link>
-                  <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="products" className="border-b-0">
-                      <AccordionTrigger className="py-0 mb-4 font-semibold hover:no-underline">
-                        Dropdown
-                      </AccordionTrigger>
-                      <AccordionContent className="mt-2">
-                        {subMenuItemsOne.map((item, idx) => (
-                          <Link
-                            key={idx}
-                            className={cn(
-                              "flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                            )}
-                            href="#"
-                          >
-                            {item.icon}
-                            <div>
-                              <div className="text-sm font-semibold">
-                                {item.title}
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <Menu className="size-4" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent className="w-full overflow-y-auto" side="left">
+                  <SheetHeader className="hidden">
+                    <SheetTitle>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl font-bold">Unzet App</span>
+                      </div>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <div className="flex flex-col gap-4 mt-8 mb-8">
+                    <Link href="#" className="font-semibold">
+                      Link
+                    </Link>
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="products" className="border-b-0">
+                        <AccordionTrigger className="py-0 mb-4 font-semibold hover:no-underline">
+                          Dropdown
+                        </AccordionTrigger>
+                        <AccordionContent className="mt-2">
+                          {subMenuItemsOne.map((item, idx) => (
+                            <Link
+                              key={idx}
+                              className={cn(
+                                "flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href="#"
+                            >
+                              {item.icon}
+                              <div>
+                                <div className="text-sm font-semibold">
+                                  {item.title}
+                                </div>
+                                <p className="text-sm leading-snug text-muted-foreground">
+                                  {item.description}
+                                </p>
                               </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                {item.description}
-                              </p>
-                            </div>
-                          </Link>
-                        ))}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </div>
-              </SheetContent>
-            </Sheet>
+                            </Link>
+                          ))}
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
